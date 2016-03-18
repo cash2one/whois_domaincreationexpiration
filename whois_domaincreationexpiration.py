@@ -22,12 +22,8 @@ if __name__ == '__main__':
 		domain = sys.argv[1]
 		whois_domain = pythonwhois.get_whois(domain) #dictionary
 
-		# print whois_domain.keys()
-		# for key, value in whois_domain.iteritems():
-		# 	print key, value
-
 		if 'creation_date' and 'expiration_date' in whois_domain.keys():
 			print str(in_unix(whois_domain['creation_date'][0]))+";"+str(in_unix(whois_domain['expiration_date'][0]))+";"+str(sys.argv[1])
 		else:
-			print "fail","fail",sys.argv[1]
+			print "none;none;",sys.argv[1]
 sys.exit(0)
